@@ -141,3 +141,6 @@ When you run three VMs on a host, you have three completely separate operating s
 
 Containers, on the other hand, all perform system calls on the exact same kernel running in the host OS. This single kernel is the only one performing x86 instructions on the host’s CPU. The CPU doesn’t need to do any kind of virtualization the way it does with VMs (see figure 1.5).
 
+
+![Figure 1.5. The difference between how apps in VMs use the CPU vs. how they use them in containers](https://user-images.githubusercontent.com/95487264/183084104-b0596767-8fe1-4328-9783-b586cf6faaef.png)
+
