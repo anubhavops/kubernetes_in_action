@@ -114,4 +114,21 @@ As you’ll see, Kubernetes enables us to achieve all of this. By abstracting aw
 
 
 
-### 1.2. Introducing container technologies
+## 1.2. Introducing container technologies
+
+Kubernetes uses Linux container technologies to provide isolation of running applications.
+We need to become familiar with the basics of containers to understand what Kubernetes does itself, and what it offloads to container technologies like Docker or rkt (pronounced “rock-it”).
+
+### 1.2.1. Understanding what containers are 
+
+#### Isolating components with Linux container technologies
+
+developers are turning to Linux container technologies. They allow you to run multiple services on the same host machine, while not only exposing a different environment to each of them, but also isolating them from each other, similarly to VMs, but with much less overhead.
+
+
+####  Comparing virtual machines to containers
+ each VM needs to run its own set of system processes, which requires additional compute resources in addition to those consumed by the component’s own process.
+
+ A container, on the other hand, is nothing more than a single isolated process running in the host OS, consuming only the resources that the app consumes and without the overhead of any additional processes.
+
+ 
