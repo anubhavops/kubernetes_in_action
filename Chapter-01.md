@@ -59,4 +59,5 @@ A change to one of them doesn’t require changes or redeployment of any other s
 
 In microservice we can individually scale the services that require scaling and leave out those those can't or don't need to.
 
+![Figure 1.2. Each microservice can be scaled individually.](https://user-images.githubusercontent.com/95487264/183064558-f4310c21-1b57-411b-9228-55106219c7ce.png)
 
