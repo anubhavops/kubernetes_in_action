@@ -286,3 +286,41 @@ Now let’s take a closer look at what a Kubernetes cluster is composed of. At t
 Figure 1.9 shows the components running on these two sets of nodes. I’ll explain them next.
 
 
+#### The Control Plane
+
+The Control Plane is what controls the cluster and makes it function. It consists of multiple components that can run on a single master node or be split across multiple nodes and replicated to ensure high availability. These components are
+
+- The *Kubernetes API Server*, which you and the other Control Plane components communicate with
+
+- The *Scheduler*, which schedules your apps (assigns a worker node to each deployable component of your application) 
+
+- The *Controller Manager*, which performs cluster-level functions, such as replicating components, keeping track of worker nodes, handling node failures, and so on
+
+- *etcd*, a reliable distributed data store that persistently stores the cluster configuration.
+
+The components of the Control Plane hold and control the state of the cluster, but they don’t run your applications. This is done by the (worker) nodes.
+
+#### The nodes
+The worker nodes are the machines that run your containerized applications. The task of running, monitoring, and providing services to your applications is done by the following components:
+
+- Docker, rkt, or another *container runtime*, which runs your containers
+- The *Kubelet*, which talks to the API server and manages containers on its node
+- The *Kubernetes Service Proxy (kube-proxy)*, which load-balances network traffic between application components
+
+We’ll explain all these components in detail in chapter 11.
+
+### 1.3.4. Running an application in Kubernetes
+
+To run an application in Kubernetes, you first need to package it up into one or more container images, push those images to an image registry, and then post a description of your app to the Kubernetes API server.
+
+The description includes information such as the container image or images that contain your application components, how those components are related to each other, and which ones need to be run co-located (together on the same node) and which don’t. For each component, you can also specify how many copies (or replicas) you want to run. Additionally, the description also includes which of those components provide a service to either internal or external clients and should be exposed through a single IP address and made discoverable to the other components.
+
+
+#### Understanding how the description results in a running container 
+
+When the API server processes your app’s description, the Scheduler schedules the specified groups of containers onto the available worker nodes based on computational resources required by each group and the unallocated resources on each node at that moment. The Kubelet on those nodes then instructs the Container Runtime (Docker, for example) to pull the required container images and run the containers.
+
+Examine figure 1.10 to gain a better understanding of how applications are deployed in Kubernetes.The app descriptor lists four containers, grouped into three sets (these sets are called pods; we’ll explain what they are in chapter 3). The first two pods each contain only a single container, whereas the last one contains two. That means both containers need to run co-located and shouldn’t be isolated from each other. Next to each pod, you also see a number representing the number of replicas of each pod that need to run in parallel. After submitting the descriptor to Kubernetes, it will schedule the specified number of replicas of each pod to the available worker nodes. The Kubelets on the nodes will then tell Docker to pull the container images from the image registry and run the containers.
+
+
+
