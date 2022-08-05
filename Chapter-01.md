@@ -47,5 +47,6 @@ Hence splitting of complex monolithic application in to smaller independently de
 Each microservice runs as an independent process (see figure 1.1) and communicates with other microservices through simple, well-defined interfaces (APIs).
 
 
+![figure 1.1](https://user-images.githubusercontent.com/95487264/183063949-e183dd45-24f8-4196-a015-790c7f14fcc0.png)
 
 
