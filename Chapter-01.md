@@ -61,3 +61,18 @@ In microservice we can individually scale the services that require scaling and 
 
 ![Figure 1.2. Each microservice can be scaled individually.](https://user-images.githubusercontent.com/95487264/183064558-f4310c21-1b57-411b-9228-55106219c7ce.png)
 
+
+#### Deploying microservices
+
+When the number of those components increases, deployment-related decisions become increasingly difficult because not only does the number of deployment combinations increase, but the number of inter-dependencies between the components increases by an even greater factor.
+
+ When deploying them, someone or something needs to configure all of them properly to enable them to work together as a single system. With increasing numbers of microservices, this becomes tedious and error-prone, especially when you consider what the ops/sysadmin teams need to do when a server fails.
+
+ Microservices also bring other problems, such as making it hard to debug and trace execution calls, because they span multiple processes and machines. Luckily, these problems are now being addressed with distributed tracing systems such as Zipkin.
+
+
+ ####  Understanding the divergence of environment requirements
+
+ Deploying dynamically linked applications that require different versions of shared libraries, and/or require other environment specifics, can quickly become a nightmare for the ops team who deploys and manages them on production servers. The bigger the number of components you need to deploy on the same host, the harder it will be to manage all their dependencies to satisfy all their requirements.
+
+ 
