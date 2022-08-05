@@ -141,6 +141,7 @@ When you run three VMs on a host, you have three completely separate operating s
 
 Containers, on the other hand, all perform system calls on the exact same kernel running in the host OS. This single kernel is the only one performing x86 instructions on the host’s CPU. The CPU doesn’t need to do any kind of virtualization the way it does with VMs (see figure 1.5).
 
+
 #### Introducing the mechanisms that make container isolation possible
 
 Two mechanisms make this possible. The first one, Linux Namespaces, makes sure each process sees its own personal view of the system (files, processes, network interfaces, hostname, and so on). The second one is Linux Control Groups (cgroups), which limit the amount of resources the process can consume (CPU, memory, network bandwidth, and so on).
@@ -196,6 +197,8 @@ Three main concepts in Docker comprise this scenario:
 
 ####  Building, distributing, and running a Docker image
 
-Figure 1.6 shows all three concepts and how they relate to each other.
+Figure 1.6 shows all three concepts and how they relate to each other. 
+
+
 
 
