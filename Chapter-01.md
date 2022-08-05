@@ -133,3 +133,11 @@ developers are turning to Linux container technologies. They allow you to run mu
 
  ![Figure 1.4. Using VMs to isolate groups of applications vs. isolating individual apps with containers](https://user-images.githubusercontent.com/95487264/183083680-af81ad1f-db82-4eb7-aec7-c0349cc42ff3.png)
 
+
+When you run three VMs on a host, you have three completely separate operating systems running on and sharing the same bare-metal hardware. Underneath those VMs is the host’s OS and a hypervisor, which divides the physical hardware resources into smaller sets of virtual resources that can be used by the operating system inside each VM. Applications running inside those VMs perform system calls to the guest OS’ kernel in the VM, and the kernel then performs x86 instructions on the host’s physical CPU through the hypervisor.
+
+> Two types of hypervisors exist. Type 1 hypervisors don’t use a host OS, while Type 2 do.
+
+
+Containers, on the other hand, all perform system calls on the exact same kernel running in the host OS. This single kernel is the only one performing x86 instructions on the host’s CPU. The CPU doesn’t need to do any kind of virtualization the way it does with VMs (see figure 1.5).
+
