@@ -75,4 +75,4 @@ When the number of those components increases, deployment-related decisions beco
 
  Deploying dynamically linked applications that require different versions of shared libraries, and/or require other environment specifics, can quickly become a nightmare for the ops team who deploys and manages them on production servers. The bigger the number of components you need to deploy on the same host, the harder it will be to manage all their dependencies to satisfy all their requirements.
 
- 
+ ![Figure 1.3. Multiple applications running on the same host may have conflicting dependencies.](https://user-images.githubusercontent.com/95487264/183065552-d1f76a75-a666-47df-bddd-348ba9661fb5.png)
