@@ -47,6 +47,16 @@ Hence splitting of complex monolithic application in to smaller independently de
 Each microservice runs as an independent process (see figure 1.1) and communicates with other microservices through simple, well-defined interfaces (APIs).
 
 
-![figure 1.1](https://user-images.githubusercontent.com/95487264/183063949-e183dd45-24f8-4196-a015-790c7f14fcc0.png)
+![figure 1.1 Components inside a monolithic application vs. standalone microservices](https://user-images.githubusercontent.com/95487264/183063949-e183dd45-24f8-4196-a015-790c7f14fcc0.png)
+
+
+Microservices communicate through synchronous protocols such as HTTP, over which they usually expose RESTful (REpresentational State Transfer) APIs, or through asynchronous protocols such as AMQP (Advanced Message Queueing Protocol). These protocols are simple, well understood by most developers, and not tied to any specific programming language. Each microservice can be written in the language that’s most appropriate for implementing that specific microservice.
+
+A change to one of them doesn’t require changes or redeployment of any other service, provided that the API doesn’t change or changes only in a backward-compatible way.
+
+
+#### Scaling microservices
+
+In microservice we can individually scale the services that require scaling and leave out those those can't or don't need to.
 
 
