@@ -31,5 +31,21 @@ Kubernetes enables developers to deploy their applications themselves and as oft
 
 Kubernetes abstracts away the hardware infrastructure and exposes your whole datacenter as a single enormous computational resource. It allows you to deploy and run your software components without having to know about the actual servers underneath. When deploying a multi-component application through Kubernetes, it selects a server for each component, deploys it, and enables it to easily find and communicate with all the other components of your application.
 
-![figure 1.1](https://user-images.githubusercontent.com/95487264/183063633-72b4a7fa-7327-4471-9b00-5d9800386bc2.png)
+
+## 1.1  Understanding the need for a system like Kubernetes 
+
+### 1.1.1 Moving from monolithic apps to microservices
+
+Monolithic application has components tightly bound which are developed, deployed and managed as one entity running as one single OS Process. Changes in one components leads to deployment of whole application and hence increases the complexity of application and leads to deterioration of quality as inter-dependencies betweens the parts are increased over the time.
+
+TO run monolithic apps we need few servers with powerful configuration and as load increases we can either SCALE UP os SCALE OUT, SCALE Up overtime increases the cost whereas SCALE OUT is cheap but for that we need to run multiple replicas of the components on servers which sometimes becomes impossible due to the components like RELATIONAL DB can't be scale horizontally easily leading to whole monolithic application can't be scale out.
+
+#### Splitting apps into microservices 
+
+Hence splitting of complex monolithic application in to smaller independently deployable components called microservices has started. 
+
+Each microservice runs as an independent process (see figure 1.1) and communicates with other microservices through simple, well-defined interfaces (APIs).
+
+
+
 
