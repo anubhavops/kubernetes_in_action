@@ -131,4 +131,5 @@ developers are turning to Linux container technologies. They allow you to run mu
 
  A container, on the other hand, is nothing more than a single isolated process running in the host OS, consuming only the resources that the app consumes and without the overhead of any additional processes.
 
- 
+ ![Figure 1.4. Using VMs to isolate groups of applications vs. isolating individual apps with containers](https://user-images.githubusercontent.com/95487264/183083680-af81ad1f-db82-4eb7-aec7-c0349cc42ff3.png)
+
