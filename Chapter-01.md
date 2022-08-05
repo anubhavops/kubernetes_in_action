@@ -76,3 +76,38 @@ When the number of those components increases, deployment-related decisions beco
  Deploying dynamically linked applications that require different versions of shared libraries, and/or require other environment specifics, can quickly become a nightmare for the ops team who deploys and manages them on production servers. The bigger the number of components you need to deploy on the same host, the harder it will be to manage all their dependencies to satisfy all their requirements.
 
  ![Figure 1.3. Multiple applications running on the same host may have conflicting dependencies.](https://user-images.githubusercontent.com/95487264/183065552-d1f76a75-a666-47df-bddd-348ba9661fb5.png)
+
+
+
+### 1.1.2. Providing a consistent environment to applications
+
+
+biggest problems that developers and operations teams always have to deal with is the differences in the environments they run their apps in. Not only is there a huge difference between development and production environments, differences even exist between individual production machines. Another unavoidable fact is that the environment of a single production machine will change over time.
+
+ system administrators give much more emphasis on keeping the system up to date with the latest security patches, while a lot of developers don’t care about that as much, and sysadmin handles PROD environment whereas developers work on their local machine.
+
+ A production system must provide the proper environment to all applications it hosts, even though they may require different, even conflicting, versions of libraries.
+
+ To reduce the number of problems that only show up in production, it would be ideal if applications could run in the exact same environment during development and in production so they have the exact same operating system, libraries, system configuration, networking environment, and everything else. You also don’t want this environment to change too much over time, if at all. Also, if possible, you want the ability to add applications to the same server without affecting any of the existing applications on that server.
+
+
+ ### 1.1.3. Moving to continuous delivery: DevOps and NoOps
+
+organizations are realizing it’s better to have the same team that develops the application also take part in deploying it and taking care of it over its whole lifetime. This means the developer, QA, and operations teams now need to collaborate throughout the whole process. This practice is called DevOps.
+
+#### Understanding the benefits
+
+Having the developers more involved in running the application in production leads to them having a better understanding of both the users’ needs and issues and the problems faced by the ops team while maintaining the app. Application developers are now also much more inclined to give users the app earlier and then use their feedback to steer further development of the app.
+
+To release newer versions of applications more often, you need to streamline the deployment process. Ideally, you want developers to deploy the applications themselves without having to wait for the ops people. But deploying an application often requires an understanding of the underlying infrastructure and the organization of the hardware in the datacenter. Developers don’t always know those details and, most of the time, don’t even want to know about them.
+
+
+#### Letting developers and sysadmins do what they do best
+
+Developers love creating new features and improving the user experience. They don’t normally want to be the ones making sure that the underlying operating system is up to date with all the security patches and things like that. They prefer to leave that up to the system administrators.
+
+The ops team is in charge of the production deployments and the hardware infrastructure they run on. They care about system security, utilization, and other aspects that aren’t a high priority for developers. The ops people don’t want to deal with the implicit interdependencies of all the application components and don’t want to think about how changes to either the underlying operating system or the infrastructure can affect the operation of the application as a whole, but they must.
+
+Ideally, you want the developers to deploy applications themselves without knowing anything about the hardware infrastructure and without dealing with the ops team. This is referred to as NoOps. Obviously, you still need someone to take care of the hardware infrastructure, but ideally, without having to deal with peculiarities of each application running on it.
+
+As you’ll see, Kubernetes enables us to achieve all of this. By abstracting away the actual hardware and exposing it as a single platform for deploying and running apps, it allows developers to configure and deploy their applications without any help from the sysadmins and allows the sysadmins to focus on keeping the underlying infrastructure up and running, while not having to know anything about the actual applications running on top of it.
