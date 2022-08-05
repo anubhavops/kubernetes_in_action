@@ -265,3 +265,24 @@ Figure 1.8 shows the simplest possible view of a Kubernetes system. The system i
 
 ![Figure 1.8. Kubernetes exposes the whole datacenter as a single deployment platform.](https://user-images.githubusercontent.com/95487264/183109399-d6491976-61bc-411d-814a-d3615a7bfda3.png)
 
+The developer can specify that certain apps must run together and Kubernetes will deploy them on the same worker node. Others will be spread around the cluster, but they can talk to each other in the same way, regardless of where they’re deployed.
+
+#### Helping developers focus on the core app features
+
+Kubernetes can be thought of as an operating system for the cluster. It relieves application developers from having to implement certain infrastructure-related services into their apps; instead they rely on Kubernetes to provide these services. This includes things such as service discovery, scaling, load-balancing, self-healing, and even leader election. Application developers can therefore focus on implementing the actual features of the applications and not waste time figuring out how to integrate them with the infrastructure.
+
+#### Helping ops teams achieve better resource utilization
+
+Kubernetes will run your containerized app somewhere in the cluster, provide information to its components on how to find each other, and keep all of them running. Because your application doesn’t care which node it’s running on, Kubernetes can relocate the app at any time, and by mixing and matching apps, achieve far better resource utilization than is possible with manual scheduling.
+
+### 1.3.3. Understanding the architecture of a Kubernetes cluster
+
+Now let’s take a closer look at what a Kubernetes cluster is composed of. At the hardware level, a Kubernetes cluster is composed of many nodes, which can be split into two types:
+
+- The master node, which hosts the Kubernetes Control Plane that controls and manages the whole Kubernetes system
+
+- Worker nodes that run the actual applications you deploy 
+
+Figure 1.9 shows the components running on these two sets of nodes. I’ll explain them next.
+
+
