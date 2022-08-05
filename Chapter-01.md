@@ -262,3 +262,6 @@ Deploying applications through Kubernetes is always the same, whether your clust
 
 Figure 1.8 shows the simplest possible view of a Kubernetes system. The system is composed of a master node and any number of worker nodes. When the developer submits a list of apps to the master, Kubernetes deploys them to the cluster of worker nodes. What node a component lands on doesn’t (and shouldn’t) matter—neither to the developer nor to the system administrator.
 
+
+![Figure 1.8. Kubernetes exposes the whole datacenter as a single deployment platform.](https://user-images.githubusercontent.com/95487264/183109399-d6491976-61bc-411d-814a-d3615a7bfda3.png)
+
