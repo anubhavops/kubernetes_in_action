@@ -141,6 +141,8 @@ When you run three VMs on a host, you have three completely separate operating s
 
 Containers, on the other hand, all perform system calls on the exact same kernel running in the host OS. This single kernel is the only one performing x86 instructions on the host’s CPU. The CPU doesn’t need to do any kind of virtualization the way it does with VMs (see figure 1.5).
 
+![Figure 1.5. The difference between how apps in VMs use the CPU vs. how they use them in containers](https://user-images.githubusercontent.com/95487264/183102428-b4075169-2f7b-4dc0-9ad2-e2fc917ae079.png)
+
 
 #### Introducing the mechanisms that make container isolation possible
 
@@ -199,6 +201,7 @@ Three main concepts in Docker comprise this scenario:
 
 Figure 1.6 shows all three concepts and how they relate to each other. 
 
+![Figure 1.6. Docker images, registries, and containers](https://user-images.githubusercontent.com/95487264/183102533-11347341-bca2-4622-b862-1a273f8b72bc.png)
 
 
 
