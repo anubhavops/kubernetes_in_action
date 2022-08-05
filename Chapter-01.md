@@ -205,3 +205,6 @@ Figure 1.6 shows all three concepts and how they relate to each other.
 
 
 
+#### Comparing virtual machines and Docker containers
+
+Now let’s look at how Docker containers specifically compare to virtual machines (and how Docker images compare to VM images). Figure 1.7 again shows the same six applications running both in VMs and as Docker containers.
