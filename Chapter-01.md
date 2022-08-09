@@ -285,3 +285,4 @@ Now let’s take a closer look at what a Kubernetes cluster is composed of. At t
 
 Figure 1.9 shows the components running on these two sets of nodes. I’ll explain them next.
 
+![Figure 1.9. The components that make up a Kubernetes cluster](https://user-images.githubusercontent.com/95487264/183630326-b5c164e9-60ac-4c31-ab34-7f5fb77b34fc.png)
