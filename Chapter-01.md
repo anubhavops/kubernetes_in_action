@@ -324,3 +324,4 @@ When the API server processes your app’s description, the Scheduler schedules 
 
 Examine figure 1.10 to gain a better understanding of how applications are deployed in Kubernetes.
 
+![Figure 1.10. A basic overview of the Kubernetes architecture and an application running on top of it](https://user-images.githubusercontent.com/95487264/183630657-fae4c49b-6d50-4410-8699-f04489d2e3e0.png)
